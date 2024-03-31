@@ -4,8 +4,6 @@
     top: 0;
     z-index: 999;
     width: 100%;
-    // background-color: rgba(255, 255, 255, .6);
-    // backdrop-filter: blur(20rpx) saturate(180%);
     transition: all .3s;
     .container {
       margin: var(--barTop) 24rpx 24rpx;
@@ -13,6 +11,11 @@
       align-items: center;
       .logo {
         margin-right: 24rpx;
+        height: var(--barHeight);
+        image {
+          width: 220rpx;
+          height: 100%;
+        }
       }
       .search {
         flex: 1;
@@ -64,7 +67,7 @@
     .mask {
       width: 100%;
       height: 120rpx;
-      background-image: linear-gradient(180deg, transparent, #ffffff);
+      background-image: linear-gradient(180deg, transparent, #f0f0f0);
       position: absolute;
       bottom: 0;
     }
@@ -77,13 +80,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 24rpx;
+      row-gap: 24rpx;
       margin: 0 24rpx;
       .goods-item {
         border-radius: 24rpx;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        margin-bottom: 24rpx;
         background-color: #ffffff;
         image {
           width: 100%;
@@ -113,7 +116,7 @@
     }
     .goods-end {
       text-align: center;
-      padding: 6rpx 0 30rpx;
+      padding: 30rpx 0;
       text {
         font-size: 25rpx;
         color: #bfbfbf;

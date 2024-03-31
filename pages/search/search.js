@@ -7,9 +7,92 @@ Page({
     capsuleTop: 0,
     capsuleHeight: 0,
     headHeight: 0,
+    rawGoodsList: [
+      {
+        id: "0",
+        imgUrl: "http://files.ganto.cn/files/81.jpg",
+        title: "商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "1",
+        imgUrl: "http://files.ganto.cn/files/19.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "2",
+        imgUrl: "http://files.ganto.cn/files/49.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "3",
+        imgUrl: "http://files.ganto.cn/files/8.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "4",
+        imgUrl: "http://files.ganto.cn/files/57.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "5",
+        imgUrl: "http://files.ganto.cn/files/61.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "6",
+        imgUrl: "http://files.ganto.cn/files/28.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "7",
+        imgUrl: "http://files.ganto.cn/files/50.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      },
+      {
+        id: "8",
+        imgUrl: "http://files.ganto.cn/files/77.jpg",
+        title: "商品名称商品名称商品名称",
+        price: "25",
+        show: false
+      }
+    ],
+    showGoodsList: []
   },
   back() {
     wx.navigateBack()
+  },
+  handleInput(e) {
+    let showGoodsList = []
+    if (e.detail.value.trim().length === 0) {
+      showGoodsList = []
+    } else {
+      showGoodsList = this.data.rawGoodsList.map(item => {
+        if (item.title.indexOf(e.detail.value) !== -1) {
+          return {...item, show: true}
+        }
+        return {...item, show: false}
+      })
+    }
+    
+    this.setData({
+      showGoodsList
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -19,7 +102,7 @@ Page({
     this.setData({
       capsuleTop: appInstance.capsuleTop,
       capsuleHeight: appInstance.capsuleHeight,
-      headHeight: appInstance.capsuleTop + appInstance.capsuleHeight * 2 + appInstance.pxRpx(24 + 15, "px")
+      headHeight: appInstance.capsuleTop + appInstance.capsuleHeight + appInstance.pxRpx(80 + 24 + 15, "px")
     })
   },
 

@@ -1,2 +1,53 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="detail">
+  <view class="head" style="--barTop: {{ capsuleTop }}px; --barHeight: {{ capsuleHeight }}px">
+    <view class="container">
+      <view class="title">
+        <view class="back" bind:tap="back">
+          <image src="../../assets/images/back.svg" mode=""/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="detail-content" style="--marginTop: {{ headHeight }}px;">
+    <view class="swiper">
+      <swiper
+        autoplay="true"
+        circular="true"
+        indicator-dots="true"
+        indicator-color="rgba(255, 255, 255, .3)"
+        indicator-active-color="rgba(255, 255, 255, 1)"
+      >
+        <swiper-item wx:for="{{ swiperList }}" wx:key="id">
+          <image src="{{ item.imgUrl }}" mode="aspectFill"/>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="content">
+      <view class="container">
+        <view class="price-box">
+          ￥<text class="price">200.9</text>
+          <text class="unit">/斤</text>
+        </view>
+        <view class="title-box">
+          <text>正品新鲜水果，显示抢购</text>
+        </view>
+        <view class="specs">
+          <text>规格</text>
+          <image src="../../assets/images/back-right.svg" mode=""/>
+        </view>
+        <view class="express">
+          <text>明日达</text>
+          <image src="../../assets/images/back-right.svg" mode=""/>
+        </view>
+        <view class="rights">
+          <text>不可退货</text>
+          <image src="../../assets/images/back-right.svg" mode=""/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btns">
+    <view class="collection">收藏</view>
+    <view class="buy-now">立即购买</view>
+  </view>
+</view>

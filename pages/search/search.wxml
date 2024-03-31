@@ -1,18 +1,31 @@
 <view class="search">
   <view class="head" style="--barTop: {{ capsuleTop }}px; --barHeight: {{ capsuleHeight }}px">
     <view class="container">
-      <view class="logo">
-        <view class="back" bind:tap="back">←</view>
+      <view class="title">
+        <view class="back" bind:tap="back">
+          <image src="../../assets/images/back.svg" mode=""/>
+        </view>
         <text>NAME</text>
       </view>
       <view class="search">
         <view class="input">
-          <input type="text" placeholder="输入商品"/>
+          <input type="text" placeholder="输入商品" bindinput="handleInput"/>
         </view>
+        <view class="search-btn">搜索</view>
       </view>
     </view>
   </view>
-  <view class="goods" style="--marginTop: {{ headHeight }}px;border: 1px solid red; height: 9000rpx;">
-    
+  <view class="goods" style="--marginTop: {{ headHeight }}px;">
+    <view class="container">
+      <block wx:for="{{ showGoodsList }}" wx:key="id">
+        <view class="goods-item" wx:if="{{ item.show }}">
+          <image src="{{ item.imgUrl }}" mode="aspectFill"/>
+          <view class="goods-content">
+            <view class="goods-title"><text>{{ item.title }}</text></view>
+            <view class="goods-price">￥<text>{{ item.price }}</text></view>
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
 </view>

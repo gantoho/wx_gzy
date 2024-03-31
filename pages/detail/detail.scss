@@ -1,1 +1,117 @@
-/* pages/detail/detail.wxss */
+.detail {
+  background-color: #ffffff;
+  .head {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    .container {
+      margin: var(--barTop) 24rpx 15rpx;
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--barHeight);
+        .back {
+          padding: 15rpx;
+          width: var(--barHeight);
+          height: var(--barHeight);
+          image {
+            width: 100%;  
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  .detail-content {
+    .swiper {
+      position: relative;
+      swiper {
+        height: 700rpx;
+        swiper-item {
+          width: 100%;
+          height: 100%;
+          image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .wx-swiper-dots.wx-swiper-dots-horizontal {
+          position: absolute;
+          bottom: 50rpx;
+        }
+        .wx-swiper-dots {
+          .wx-swiper-dot {
+            width: 30rpx;
+            border-radius: 9999rpx;
+          }
+        }
+      }
+    }
+    .content {
+      .container {
+        margin: 24rpx;
+        .price-box {
+          color: red;
+          font-size: 50rpx;
+          .price {
+            font-size: 70rpx;
+          }
+          .unit {
+            font-size: 30rpx;
+            color: #000000;
+          }
+        }
+        .title-box {
+          font-size: 40rpx;
+          border-bottom: 1px solid #ECECEC;
+          padding-bottom: 20rpx;
+        }
+        .specs, .express, .rights {
+          border-bottom: 1px solid #ECECEC;
+          padding: 15rpx 0;
+          font-size: 30rpx;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text {
+            flex: 1;
+          }
+          image {
+            width: 32rpx;
+            height: 32rpx;
+            object-fit: contain;
+          }
+        } 
+      }
+    }
+  }
+  .btns {
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    padding: 15rpx 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .collection, .buy-now {
+      padding: 15rpx 24rpx;
+      border-radius: 24rpx;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 900;
+    }
+    .collection {
+      background-color: #FF9900;
+    }
+    .buy-now {
+      background-color: #00A3FF;
+    }
+  }
+}
