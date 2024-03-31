@@ -1,0 +1,123 @@
+.index {
+  .head {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    // background-color: rgba(255, 255, 255, .6);
+    // backdrop-filter: blur(20rpx) saturate(180%);
+    transition: all .3s;
+    .container {
+      margin: var(--barTop) 24rpx 24rpx;
+      display: flex;
+      align-items: center;
+      .logo {
+        margin-right: 24rpx;
+      }
+      .search {
+        flex: 1;
+        .input {
+          width: calc(100% - 184rpx);
+          height: var(--barHeight);
+          border-radius: 9999rpx;
+          background-color: rgba(255, 255, 255, .5);
+          // overflow: hidden;
+          navigator {
+            width: 100%;
+            height: 100%;
+            swiper {
+              height: 100%;
+              swiper-item {
+                display: flex;
+                align-items: center;
+                padding: 0 24rpx;
+                font-size: 26rpx;
+                color: #929292;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .swiper {
+    position: relative;
+    swiper {
+      height: 700rpx;
+      swiper-item {
+        navigator {
+          display: block;
+          width: 100%;
+          height: 100%;
+          image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .wx-swiper-dots.wx-swiper-dots-horizontal {
+        position: absolute;
+        bottom: 120rpx;
+      }
+    }
+    .mask {
+      width: 100%;
+      height: 120rpx;
+      background-image: linear-gradient(180deg, transparent, #ffffff);
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .goods {
+    margin-top: -90rpx;
+    position: relative;
+    z-index: 9;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24rpx;
+      margin: 0 24rpx;
+      .goods-item {
+        border-radius: 24rpx;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24rpx;
+        background-color: #ffffff;
+        image {
+          width: 100%;
+          height: 320rpx;
+        }
+        .goods-content {
+          flex: 1;
+          padding: 10rpx 20rpx;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .goods-title {
+            font-weight: 900;
+            margin-bottom: 10rpx;
+          }
+          .goods-price {
+            font-size: 30rpx;
+            color: #ff0000;
+            font-weight: 900;
+            text {
+              font-size: 35rpx;
+            }
+          }
+        }
+      }
+    }
+    .goods-end {
+      text-align: center;
+      padding: 6rpx 0 30rpx;
+      text {
+        font-size: 25rpx;
+        color: #bfbfbf;
+      }
+    }
+  }
+}

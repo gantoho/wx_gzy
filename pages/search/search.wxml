@@ -1,0 +1,18 @@
+<view class="search">
+  <view class="head" style="--barTop: {{ capsuleTop }}px; --barHeight: {{ capsuleHeight }}px">
+    <view class="container">
+      <view class="logo">
+        <view class="back" bind:tap="back">←</view>
+        <text>NAME</text>
+      </view>
+      <view class="search">
+        <view class="input">
+          <input type="text" placeholder="输入商品"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="goods" style="--marginTop: {{ headHeight }}px;border: 1px solid red; height: 9000rpx;">
+    
+  </view>
+</view>
