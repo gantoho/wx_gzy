@@ -2,7 +2,7 @@
   <view class="head" style="--barTop: {{ capsuleTop }}px; --barHeight: {{ capsuleHeight }}px; background-color: {{ scrollTop > 200 ? 'rgba(255, 255, 255, .6)' : 'transparent' }}; backdrop-filter: {{ scrollTop > 200 ? 'blur(20rpx) saturate(180%)' : 'blur(0rpx) saturate(100%)' }};">
     <view class="container">
       <view class="logo">
-        <image src="../../assets/images/在云水果商城.png" mode="aspectFit"/>
+        <image src="../../assets/images/zylogo.svg" mode="aspectFit"/>
       </view>
       <view class="search">
         <view class="input">

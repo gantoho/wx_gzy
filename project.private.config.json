@@ -3,5 +3,6 @@
   "projectname": "Guo",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "condition": {}
 }

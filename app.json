@@ -3,10 +3,12 @@
     "pages/index/index",
     "pages/search/search",
     "pages/my/my",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/about/about",
+    "pages/setting/setting",
+    "pages/order/order"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "style": "v2",
@@ -22,14 +24,20 @@
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
   "tabBar": {
+    "color": "#9A9A9A",
+    "selectedColor": "#000000",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "Home"
+        "text": "首页",
+        "iconPath": "./assets/images/home.png",
+        "selectedIconPath": "./assets/images/home-active.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "My"
+        "text": "我的",
+        "iconPath": "./assets/images/my.png",
+        "selectedIconPath": "./assets/images/my-active.png"
       }
     ]
   }

@@ -25,13 +25,13 @@ Page({
       {
         id: "0",
         imgUrl: "http://files.ganto.cn/files/81.jpg",
-        title: "商品名称",
+        title: "商品名称商品名称商品名称",
         price: "25"
       },
       {
         id: "1",
         imgUrl: "http://files.ganto.cn/files/19.jpg",
-        title: "商品名称商品名称商品名称",
+        title: "商品名称",
         price: "25"
       },
       {
@@ -146,14 +146,28 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    wx.showToast({
+      title: '刷新中',
+      icon: "loading"
+    })
+    setTimeout(() => {
+      console.log("下拉刷新")
+      wx.hideToast()
+    }, 1000)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    wx.showToast({
+      title: '更新中',
+      icon: "loading"
+    })
+    setTimeout(() => {
+      console.log("上拉更新")
+      wx.hideToast()
+    }, 1000)
   },
 
   /**

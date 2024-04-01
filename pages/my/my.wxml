@@ -1,5 +1,89 @@
 <view class="my">
   <view class="head">
-    我的
+    <image src="http://files.ganto.cn/files/100.jpg" mode="aspectFill"/>
+    <view class="mask"></view>
+  </view>
+  <view class="info">
+    <view class="container">
+      <image src="http://files.ganto.cn/files/122.jpg" mode="aspectFill"/>
+      <view class="user">
+        <view class="content">
+          <view class="name">Ganto</view>
+          <view class="motto">向死而生</view>
+        </view>
+        <view class="edit">
+          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="kong-kim">
+    <view class="container">
+      <scroll-view
+        scroll-x="true"
+        enhanced="true"
+        show-scrollbar="false"
+      >
+        <view class="view-content">
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+          <view class="kk-item">
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <text>123123</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="menu-list">
+    <view class="container">
+      <view class="menu-item order">
+        <navigator url="/pages/order/order" open-type="navigate">
+          <text>订单</text>
+          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+        </navigator>
+      </view>
+      <view class="menu-item setting">
+        <navigator url="/pages/setting/setting">
+          <text>设置</text>
+          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+        </navigator>
+      </view>
+      <view class="menu-item about">
+        <navigator url="/pages/about/about">
+          <text>关于</text>
+          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="app-info">
+    <text>v1.0.0</text>
   </view>
 </view>

@@ -1,5 +1,4 @@
 .detail {
-  background-color: #ffffff;
   .head {
     position: fixed;
     top: 0;
@@ -26,6 +25,7 @@
     }
   }
   .detail-content {
+    padding-bottom: 100rpx;
     .swiper {
       position: relative;
       swiper {
@@ -52,13 +52,15 @@
       }
     }
     .content {
+      background-color: #ffffff;
       .container {
-        margin: 24rpx;
+        padding: 24rpx 24rpx 0;
         .price-box {
           color: red;
-          font-size: 50rpx;
+          font-size: 40rpx;
           .price {
-            font-size: 70rpx;
+            font-size: 60rpx;
+            font-weight: 900;
           }
           .unit {
             font-size: 30rpx;
@@ -66,12 +68,12 @@
           }
         }
         .title-box {
-          font-size: 40rpx;
-          border-bottom: 1px solid #ECECEC;
+          font-size: 35rpx;
+          border-bottom: 1px solid #f7f7f7;
           padding-bottom: 20rpx;
         }
         .specs, .express, .rights {
-          border-bottom: 1px solid #ECECEC;
+          border-bottom: 1px solid #f7f7f7;
           padding: 15rpx 0;
           font-size: 30rpx;
           display: flex;
@@ -79,6 +81,7 @@
           align-items: center;
           text {
             flex: 1;
+            color: #7e7e7e;
           }
           image {
             width: 32rpx;
@@ -88,24 +91,34 @@
         } 
       }
     }
+    .info {
+      margin-top: 20rpx;
+      background-color: #ffffff;
+      .container {
+        padding: 24rpx;
+      }
+    }
   }
   .btns {
     width: 100%;
+    height: 120rpx;
     background-color: #ffffff;
+    border-top: 1px solid #dddddd;
     position: fixed;
     bottom: 0;
-    padding: 15rpx 24rpx;
+    padding: 0 24rpx;
     display: flex;
     justify-content: space-between;
     align-items: center;
     .collection, .buy-now {
-      padding: 15rpx 24rpx;
-      border-radius: 24rpx;
+      padding: 20rpx 35rpx;
+      border-radius: 16rpx;
       color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: 900;
+      font-size: 30rpx;
     }
     .collection {
       background-color: #FF9900;

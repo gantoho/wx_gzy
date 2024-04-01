@@ -1,0 +1,140 @@
+.my {
+  .head {
+    width: 100%;
+    height: 450rpx;
+    position: relative;
+    image {
+      width: 100%;
+      height: 100%;
+    }
+    .mask {
+      width: 100%;
+      height: 200rpx;
+      position: absolute;
+      bottom: 0;
+      background-image: linear-gradient(180deg, transparent, #f0f0f0);
+    }
+  }
+  .info {
+    width: 100%;
+    height: 450rpx;
+    position: absolute;
+    top: 0;
+    .container {
+      width: 100%;
+      position: absolute;
+      bottom: 24rpx;
+      display: flex;
+      align-items: center;
+      column-gap: 24rpx;
+      padding: 0 24rpx;
+      image {
+        width: 160rpx;
+        height: 160rpx;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .user {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .content {
+          .name {
+            font-size: 50rpx;
+          }
+          .motto {
+            font-size: 28rpx;
+          }
+        }
+        .edit {
+          width: 32rpx;
+          height: 32rpx;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .kong-kim {
+    padding: 24rpx;
+    .container {
+      background-color: #ffffff;
+      padding: 24rpx 0rpx 10rpx;
+      border-radius: 24rpx;
+      overflow: hidden;
+      scroll-view {
+        .view-content {
+          width: fit-content;
+          display: flex;
+          column-gap: 15rpx;
+          .kk-item {
+            &:first-child {
+              margin-left: 24rpx;
+            }
+            &:last-child {
+              margin-right: 24rpx;
+            }
+            flex-shrink: 0;
+            width: 140rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 24rpx;
+            display: flex;
+            flex-direction: column;
+            image {
+              flex-shrink: 0;
+              width: 100%;
+              height: 140rpx;
+              border-radius: 20rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu-list {
+    padding: 0 24rpx;
+    .container {
+      background-color: #ffffff;
+      padding: 15rpx 0rpx;
+      border-radius: 24rpx;
+      overflow: hidden;
+      .menu-item {
+        margin: 0 24rpx;
+        & + .menu-item {
+          border-top: 1px solid #f0f0f0;
+        }
+        navigator {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20rpx 0;
+          text {
+            font-size: 35rpx;
+          }
+          image {
+            width: 32rpx;
+            height: 32rpx;
+          }
+        }
+      }
+    }
+  }
+  .app-info {
+    text-align: center;
+    margin: 24rpx;
+    font-size: 30rpx;
+    color: #7a7a7a;
+  }
+}
+
+::-webkit-scrollbar {
+  display:none;
+  width:0;
+  height:0;
+  color:transparent;
+}

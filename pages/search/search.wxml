@@ -5,7 +5,7 @@
         <view class="back" bind:tap="back">
           <image src="../../assets/images/back.svg" mode=""/>
         </view>
-        <text>NAME</text>
+        <text>搜索</text>
       </view>
       <view class="search">
         <view class="input">

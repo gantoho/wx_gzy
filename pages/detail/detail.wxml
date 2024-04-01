@@ -45,6 +45,16 @@
         </view>
       </view>
     </view>
+    <view class="info">
+      <view class="container">
+        <view>  11  </view>
+        <view>  22  </view>
+        <view>  33  </view>
+        <view>  44  </view>
+        <view>  55  </view>
+        <view>  66  </view>
+      </view>
+    </view>
   </view>
   <view class="btns">
     <view class="collection">收藏</view>
