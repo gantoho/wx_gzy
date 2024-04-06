@@ -1,4 +1,4 @@
-// pages/my/my.js
+const { http } = require("../../utils/request")
 Page({
 
   /**
@@ -7,12 +7,18 @@ Page({
   data: {
 
   },
-
+  async login(username, password) {
+    const ret = await http("http://localhost:8090/login", "POST", {
+      username: "admin",
+      password: "admin"
+    })
+    console.log(ret)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.login()
   },
 
   /**

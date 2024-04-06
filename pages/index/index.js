@@ -1,3 +1,4 @@
+const { http } = require('../../utils/request')
 Page({
 
   /**
@@ -94,9 +95,36 @@ Page({
     capsuleTop: 0,
     capsuleHeight: 0,
     scrollTop: 0,
+    pageCode: 1,
+    pageSize: 10,
   },
   stopTouchMove() {
     return false;
+  },
+  async getGoodsList(pageCode, pageSize, type = "first") {
+    const ret = await http("https://api.ganto.cn/getGoods", "GET", {
+      pageCode,
+      pageSize,
+    })
+    if (type === "first") {
+      this.setData({
+        goodsList: ret.data
+      })
+    } else {
+      if (!ret.data) {
+        return
+      }
+      this.setData({
+        goodsList: [...this.data.goodsList, ...ret.data]
+      })
+    }
+  },
+  async getIndexSwipers() {
+    const ret = await http("https://api.ganto.cn/getIndexSwipers")
+    
+    this.setData({
+      swiperList: ret.data
+    })
   },
   onPageScroll(e) {
     this.setData({
@@ -107,6 +135,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.getGoodsList(this.data.pageCode, this.data.pageSize)
+    this.getIndexSwipers()
     const appInstance = getApp()
     this.setData({
       capsuleTop: appInstance.capsuleTop,
@@ -146,28 +176,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    wx.showToast({
-      title: '刷新中',
-      icon: "loading"
+    this.setData({
+      pageCode: 1
     })
-    setTimeout(() => {
-      console.log("下拉刷新")
-      wx.hideToast()
-    }, 1000)
+    this.getGoodsList(this.data.pageCode, this.data.pageSize)
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-    wx.showToast({
-      title: '更新中',
-      icon: "loading"
+    this.setData({
+      pageCode: this.data.pageCode + 1
     })
-    setTimeout(() => {
-      console.log("上拉更新")
-      wx.hideToast()
-    }, 1000)
+    this.getGoodsList(this.data.pageCode, this.data.pageSize, "push")
   },
 
   /**

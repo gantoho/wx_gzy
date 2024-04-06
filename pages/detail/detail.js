@@ -1,4 +1,4 @@
-// pages/detail/detail.js
+const { http } = require('../../utils/request')
 Page({
 
   /**
@@ -8,32 +8,24 @@ Page({
     capsuleTop: 0,
     capsuleHeight: 0,
     headHeight: 0,
-    swiperList: [
-      {
-        id: "0",
-        imgUrl: "http://files.ganto.cn/files/56.jpg",
-      },
-      {
-        id: "1",
-        imgUrl: "http://files.ganto.cn/files/10.jpg",
-      },
-      {
-        id: "2",
-        imgUrl: "http://files.ganto.cn/files/130.jpg",
-      },
-      {
-        id: "3",
-        imgUrl: "http://files.ganto.cn/files/40.jpg",
-      }
-    ],
+    detail: {}
   },
   back() {
     wx.navigateBack()
+  },
+  async getGoodsDetail(id) {
+    const ret = await http("https://api.ganto.cn/getGoodsDetail", "GET", {
+      id,
+    })
+    this.setData({
+      detail: ret.data
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.getGoodsDetail(options.id)
     const appInstance = getApp()
     this.setData({
       capsuleTop: appInstance.capsuleTop,

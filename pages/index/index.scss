@@ -44,16 +44,16 @@
       }
     }
   }
-  .swiper {
+  .swiper-box {
     position: relative;
-    swiper {
-      height: 700rpx;
-      swiper-item {
-        navigator {
+    .swiper {
+      height: 800rpx;
+      .swiper-item {
+        .navto {
           display: block;
           width: 100%;
           height: 100%;
-          image {
+          .swiper-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -62,7 +62,7 @@
       }
       .wx-swiper-dots.wx-swiper-dots-horizontal {
         position: absolute;
-        bottom: 120rpx;
+        bottom: 180rpx;
       }
       .wx-swiper-dots {
         display: flex;
@@ -91,7 +91,7 @@
     }
   }
   .goods {
-    margin-top: -90rpx;
+    margin-top: -150rpx;
     position: relative;
     z-index: 9;
     .container {

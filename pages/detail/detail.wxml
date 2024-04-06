@@ -17,19 +17,19 @@
         indicator-color="rgba(255, 255, 255, .3)"
         indicator-active-color="rgba(255, 255, 255, 1)"
       >
-        <swiper-item wx:for="{{ swiperList }}" wx:key="id">
-          <image src="{{ item.imgUrl }}" mode="aspectFill"/>
+        <swiper-item wx:for="{{ detail.swipers }}" wx:key="*this">
+          <image src="{{ item }}" mode="aspectFill"/>
         </swiper-item>
       </swiper>
     </view>
     <view class="content">
       <view class="container">
         <view class="price-box">
-          ￥<text class="price">200.9</text>
+          ￥<text class="price">{{ detail.price }}</text>
           <text class="unit">/斤</text>
         </view>
         <view class="title-box">
-          <text>正品新鲜水果，显示抢购</text>
+          <text>{{ detail.title }}</text>
         </view>
         <view class="specs">
           <text>规格</text>

@@ -25,17 +25,18 @@
       </view>
     </view>
   </view>
-  <view class="swiper">
+  <view class="swiper-box">
     <swiper
+      class="swiper"
       autoplay="true"
       circular="true"
       indicator-dots="true"
       indicator-color="rgba(255, 255, 255, .3)"
       indicator-active-color="rgba(255, 255, 255, 1)"
     >
-      <swiper-item wx:for="{{ swiperList }}" wx:key="id">
-        <navigator url="{{ item.jumpPath }}" open-type="navigate">
-          <image src="{{ item.imgUrl }}" mode="aspectFill"/>
+      <swiper-item class="swiper-item" wx:for="{{ swiperList }}" wx:key="id">
+        <navigator class="navto" url="{{ item.to }}" open-type="navigate">
+          <image class="swiper-img" src="{{ item.url }}" mode="aspectFill"/>
         </navigator>
       </swiper-item>
     </swiper>
@@ -44,8 +45,8 @@
   <view class="goods">
     <view class="container">
       <view class="goods-item" wx:for="{{goodsList}}" wx:key="id">
-        <navigator url="/pages/detail/detail" open-type="navigate">
-          <image src="{{ item.imgUrl }}"
+        <navigator url="/pages/detail/detail?id={{ item.id }}" open-type="navigate">
+          <image src="{{ item.url }}"
           mode="aspectFill"/>
           <view class="goods-content">
             <view class="goods-title"><text>{{ item.title }}</text></view>
@@ -57,3 +58,4 @@
     <view class="goods-end"><text>已到底部</text></view>
   </view>
 </view>
+
