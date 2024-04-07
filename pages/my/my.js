@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user: {
 
+    }
   },
   async login(username, password) {
-    const ret = await http("http://localhost:8090/login", "POST", {
+    const ret = await http("https://api.ganto.cn/login", "POST", {
       username: "admin",
-      password: "admin"
+      password: "Admin123_"
     })
-    console.log(ret)
+    this.setData({
+      user: ret
+    })
   },
   /**
    * 生命周期函数--监听页面加载

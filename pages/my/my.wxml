@@ -5,11 +5,11 @@
   </view>
   <view class="info">
     <view class="container">
-      <image src="http://files.ganto.cn/files/122.jpg" mode="aspectFill"/>
+      <image src="http://files.ganto.cn/files/142.jpg" mode="aspectFill"/>
       <view class="user">
         <view class="content">
-          <view class="name">Ganto</view>
-          <view class="motto">向死而生</view>
+          <view class="name">登录 / 注册</view>
+          <view class="motto">请先登录</view>
         </view>
         <view class="edit">
           <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
@@ -81,6 +81,7 @@
           <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
         </navigator>
       </view>
+      {{ user.data.username }}
     </view>
   </view>
   <view class="app-info">
