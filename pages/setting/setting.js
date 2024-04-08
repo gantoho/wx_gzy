@@ -7,7 +7,17 @@ Page({
   data: {
 
   },
-
+  logout() {
+    wx.removeStorage({
+      key: 'user',
+    })
+    let pages = getCurrentPages();
+    let beforePage = pages[pages.length - 2];
+    beforePage.go_update()
+    wx.switchTab({
+      url: '/pages/my/my'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

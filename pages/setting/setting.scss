@@ -1,1 +1,19 @@
-/* pages/setting/setting.wxss */
+.setting {
+  padding: 24rpx;
+  .container {
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    .list {
+      font-size: 35rpx;
+      .list-item {
+        &+.list-item {
+          margin-top: 20rpx;
+        }
+      }
+    }
+    .foot {
+      margin-top: 20rpx;
+    }
+  }
+}

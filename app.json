@@ -15,7 +15,6 @@
   "window": {
     "navigationStyle": "custom"
   },
-  "style": "v2",
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
@@ -26,7 +25,6 @@
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents",
   "tabBar": {
     "color": "#9A9A9A",
     "selectedColor": "#121212",
@@ -44,5 +42,8 @@
         "selectedIconPath": "./assets/images/my-active.png"
       }
     ]
+  },
+  "useExtendedLib": {
+    "weui": true
   }
 }

@@ -1,60 +1,60 @@
 <view class="my">
   <view class="head">
-    <image src="http://files.ganto.cn/files/100.jpg" mode="aspectFill"/>
+    <image src="http://files.ganto.cn/files/100.jpg" mode="aspectFill" />
     <view class="mask"></view>
   </view>
   <view class="info">
     <view class="container">
-      <image src="http://files.ganto.cn/files/142.jpg" mode="aspectFill"/>
+      <image src="{{ user.data.avatar ? user.data.avatar : 'http://files.ganto.cn/files/142.jpg' }}" mode="aspectFill" />
       <view class="user">
-        <view class="content">
+        <view wx:if="{{ user === '' }}" class="content" bind:tap="toLogin">
           <view class="name">登录 / 注册</view>
           <view class="motto">请先登录</view>
         </view>
+        <view wx:else class="content">
+          <view class="name">{{ user.data.username }}</view>
+          <view class="motto">{{ user.data.motto.length === 0 ? "空" : user.data.motto }}</view>
+        </view>
         <view class="edit">
-          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+          <image src="../../assets/images/back-right.svg" mode="aspectFill" />
         </view>
       </view>
     </view>
   </view>
   <view class="kong-kim">
     <view class="container">
-      <scroll-view
-        scroll-x="true"
-        enhanced="true"
-        show-scrollbar="false"
-      >
+      <scroll-view scroll-x="true" enhanced="true" show-scrollbar="false">
         <view class="view-content">
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
           <view class="kk-item">
-            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill"/>
+            <image src="http://files.ganto.cn/files/113.jpg" mode="aspectFill" />
             <text>123123</text>
           </view>
         </view>
@@ -66,25 +66,54 @@
       <view class="menu-item order">
         <navigator url="/pages/order/order" open-type="navigate">
           <text>订单</text>
-          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+          <image src="../../assets/images/back-right.svg" mode="aspectFill" />
         </navigator>
       </view>
       <view class="menu-item setting">
         <navigator url="/pages/setting/setting">
           <text>设置</text>
-          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+          <image src="../../assets/images/back-right.svg" mode="aspectFill" />
         </navigator>
       </view>
       <view class="menu-item about">
         <navigator url="/pages/about/about">
           <text>关于</text>
-          <image src="../../assets/images/back-right.svg" mode="aspectFill"/>
+          <image src="../../assets/images/back-right.svg" mode="aspectFill" />
         </navigator>
       </view>
-      {{ user.data.username }}
     </view>
   </view>
   <view class="app-info">
     <text>v1.0.0</text>
   </view>
 </view>
+
+<page-container class="login" show="{{dialogShow}}" position="top" round="true">
+  <view class="title">在云账号登录</view>
+  <view class="form">
+    <van-cell-group class="vcg">
+      <van-field
+        class="vf vfu"
+        model:value="{{ username }}"
+        label="账号"
+        placeholder="请输入用户名"
+        required
+        clearable
+        error="{{ usernameErr }}"
+      />
+      <van-field
+        class="vf vfp"
+        model:value="{{ password }}"
+        type="password"
+        label="密码"
+        placeholder="请输入密码"
+        required
+        clearable
+        error="{{ passwordErr }}"
+      />
+    </van-cell-group>
+  </view>
+  <view class="btns">
+    <van-button color="#90aa2f" size="small" bind:tap="login">登录</van-button>
+  </view>
+</page-container>

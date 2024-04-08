@@ -13,7 +13,6 @@
     "minified": true,
     "enhance": true,
     "showShadowRootInWxmlPanel": true,
-    "packNpmRelationList": [],
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -21,6 +20,13 @@
     },
     "useCompilerPlugins": [
       "sass"
+    ],
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram/"
+      }
     ]
   },
   "condition": {},

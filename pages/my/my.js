@@ -5,14 +5,74 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user: {
-
-    }
+    user: null,
+    dialogShow: false,
+    username: "",
+    usernameErr: false,
+    password: "",
+    passwordErr: false,
   },
-  async login(username, password) {
+  go_update() {
+    this.onLoad()
+  },
+  toLogin() {
+    this.setData({
+      dialogShow: true
+    })
+  },
+  async login() {
+    const { username, password } = this.data
+    const usernameRegex = /^[a-zA-Z0-9_-]{3,18}$/
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_]).{6,20}$/
+    if (!usernameRegex.test(username)) {
+      wx.showToast({
+        title: '用户名格式有误',
+        icon: "error"
+      })
+      this.setData({
+        usernameErr: true
+      })
+      return
+    }
+    this.setData({
+      usernameErr: false
+    })
+
+    if (!passwordRegex.test(password)) {
+      wx.showToast({
+        title: '密码格式有误',
+        icon: "error"
+      })
+      this.setData({
+        passwordErr: true
+      })
+      return
+    }
+    this.setData({
+      passwordErr: false
+    })
+    
+    await this.loginApi(this.data.username, this.data.password)
+
+    if (!this.data.user.data) {
+      wx.showToast({
+        title: this.data.user.message,
+        icon: "error"
+      })
+      return
+    }
+    wx.showToast({
+      title: '登录成功',
+    })
+    wx.setStorageSync("user", this.data.user)
+    this.setData({
+      dialogShow: false
+    })
+  },
+  async loginApi(username, password) {
     const ret = await http("https://api.ganto.cn/login", "POST", {
-      username: "admin",
-      password: "Admin123_"
+      username,
+      password
     })
     this.setData({
       user: ret
@@ -22,7 +82,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.login()
+    this.setData({
+      user: wx.getStorageSync("user")
+    })
   },
 
   /**

@@ -1,1 +1,14 @@
-<view>设置</view>
+<view class="setting">
+  <view class="container">
+    <view class="list">
+      <view class="list-item">清理缓存</view>
+      <view class="list-item">设置主题</view>
+      <view class="list-item">平台反馈</view>
+      <view class="list-item">平台分享</view>
+      <view class="list-item">用户隐私权限</view>
+    </view>
+    <view class="foot">
+      <van-button color="#ff0000" size="large" bind:tap="logout">退出登录</van-button>
+    </view>
+  </view>
+</view>
