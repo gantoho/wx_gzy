@@ -1,3 +1,4 @@
-<view>
+<view class="about">
   关于我们
+  <button bind:tap="to">测试</button>
 </view>

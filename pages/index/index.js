@@ -96,7 +96,7 @@ Page({
     capsuleHeight: 0,
     scrollTop: 0,
     pageCode: 1,
-    pageSize: 10,
+    pageSize: 20,
   },
   stopTouchMove() {
     return false;

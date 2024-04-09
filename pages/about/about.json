@@ -4,5 +4,6 @@
   "navigationBarTitleText": "关于我们",
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationStyle": "default"
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
 }
