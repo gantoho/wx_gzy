@@ -102,9 +102,20 @@ Page({
     return false;
   },
   async getGoodsList(pageCode, pageSize, type = "first") {
+    const user = wx.getStorageSync("user")
+    if (!user) {
+      wx.showToast({
+        title: '请先登录',
+      })
+      return
+    }
+    const token = user.data.token
     const ret = await http("https://api.ganto.cn/getGoods", "GET", {
       pageCode,
       pageSize,
+    },
+    {
+      token
     })
     if (type === "first") {
       this.setData({

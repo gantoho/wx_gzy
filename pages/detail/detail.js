@@ -14,8 +14,18 @@ Page({
     wx.navigateBack()
   },
   async getGoodsDetail(id) {
+    const user = wx.getStorageSync("user")
+    if (!user) {
+      wx.showToast({
+        title: '请先登录',
+      })
+      return
+    }
+    const token = user.data.token
     const ret = await http("https://api.ganto.cn/getGoodsDetail", "GET", {
       id,
+    },{
+      token
     })
     this.setData({
       detail: ret.data
