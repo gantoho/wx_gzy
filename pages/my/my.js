@@ -64,7 +64,7 @@ Page({
     wx.showToast({
       title: '登录成功',
     })
-    wx.setStorageSync("user", this.data.user)
+    wx.setStorageSync("token", this.data.user.data.token)
     this.setData({
       dialogShow: false
     })
@@ -83,7 +83,7 @@ Page({
    */
   onLoad(options) {
     this.setData({
-      user: wx.getStorageSync("user")
+      user: wx.getStorageSync("token")
     })
   },
 
