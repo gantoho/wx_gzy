@@ -8,7 +8,9 @@
       <view class="list-item">用户隐私权限</view>
     </view>
     <view class="foot">
-      <van-button color="#ff0000" size="large" bind:tap="logout">退出登录</van-button>
+      <view class="btn">
+        <van-button color="#ff0000" size="large" bind:tap="logout">退出登录</van-button>
+      </view>
     </view>
   </view>
 </view>

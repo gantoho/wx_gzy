@@ -9,7 +9,7 @@ Page({
   },
   logout() {
     wx.removeStorage({
-      key: 'user',
+      key: 'token',
     })
     let pages = getCurrentPages();
     let beforePage = pages[pages.length - 2];

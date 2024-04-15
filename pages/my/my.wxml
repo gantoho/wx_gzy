@@ -7,7 +7,7 @@
     <view class="container">
       <image src="{{ user.data.avatar ? user.data.avatar : 'http://files.ganto.cn/files/142.jpg' }}" mode="aspectFill" />
       <view class="user">
-        <view wx:if="{{ user === '' }}" class="content" bind:tap="toLogin">
+        <view wx:if="{{ !user }}" class="content" bind:tap="toLogin">
           <view class="name">登录 / 注册</view>
           <view class="motto">请先登录</view>
         </view>

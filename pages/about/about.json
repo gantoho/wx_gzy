@@ -5,5 +5,5 @@
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
   "navigationStyle": "default",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

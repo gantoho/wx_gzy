@@ -1,4 +1,6 @@
 <view class="about">
-  关于我们
-  <button bind:tap="to">测试</button>
+  <view class="container">
+    <text>关于我们</text>
+    <textarea value="{{text}}"/>
+  </view>
 </view>

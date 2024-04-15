@@ -1,18 +1,32 @@
-// pages/order/order.js
+
+const { http } = require('../../utils/request')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    orders: null
   },
-
+  async getOrders() {
+    const token = wx.getStorageSync("token")
+    if (!token) {
+      wx.showToast({
+        title: '请先登录',
+      })
+      return
+    }
+    const ret = await http("https://api.ganto.cn/getUserOrders","GET", {}, {token})
+    console.log(ret)
+    this.setData({
+      orders: ret.data
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getOrders()
   },
 
   /**

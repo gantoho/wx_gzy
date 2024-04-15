@@ -1,1 +1,25 @@
-<view>订单</view>
+<view class="orders">
+  <view class="container">
+    <view class="order" wx:for="{{orders}}" wx:key="id">
+      <view>{{ item.address }}</view>
+      <block wx:if="{{ item.status == 0 }}">
+        <text>未付款</text>
+      </block>
+      <block wx:elif="{{ item.status == 1 }}">
+        <text>已失效</text>
+      </block>
+      <block wx:elif="{{ item.status == 2 }}">
+        <text>待发货</text>
+      </block>
+      <block wx:elif="{{ item.status == 3 }}">
+        <text>待评价</text>
+      </block>
+      <block wx:elif="{{ item.status == 4 }}">
+        <text>异常</text>
+      </block>
+      <block wx:else>
+        <text>系统数据出错</text>
+      </block>
+    </view>
+  </view>
+</view>

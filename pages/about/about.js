@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    text: "认准官方域名: zaiyun.app"
   },
   to() {
     wx.reLaunch({

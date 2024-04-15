@@ -14,6 +14,9 @@ Page({
   },
   go_update() {
     this.onLoad()
+    this.setData({
+      user: null
+    })
   },
   toLogin() {
     this.setData({
@@ -78,13 +81,27 @@ Page({
       user: ret
     })
   },
+  async load() {
+    const token = wx.getStorageSync("token")
+    if (!token) {
+      wx.showToast({
+        title: '请先登录',
+      })
+      return
+    }
+    const ret = await http("https://api.ganto.cn/getUser", "GET", {}, {token})
+    if (ret.message !== "success") {
+      return
+    }
+    this.setData({
+      user: ret
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.setData({
-      user: wx.getStorageSync("token")
-    })
+    this.load()
   },
 
   /**
